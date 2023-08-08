@@ -6,7 +6,7 @@ import { getConfigFile } from "medusa-core-utils";
 import { attachStoreRoutes } from "./routes/store";
 import { attachAdminRoutes } from "./routes/admin";
 
-export default (rootDirectory: string): Router | Router[] => {
+export default (rootDirectory: string, options): Router | Router[] => {
   // Read currently-loaded medusa config
   const { configModule } = getConfigFile<ConfigModule>(
     rootDirectory,
@@ -45,7 +45,7 @@ export default (rootDirectory: string): Router | Router[] => {
 
   // Attach custom routes to these routers
   attachStoreRoutes(storeRouter);
-  attachAdminRoutes(adminRouter);
+  attachAdminRoutes(adminRouter, options);
 
   return router;
 };
