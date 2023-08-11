@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "lib": ["es5", "es6"],
+    "lib": [
+      "ES2022"
+    ],
     "target": "esnext",
     "allowJs": true,
     "esModuleInterop": true,
@@ -16,7 +18,9 @@
     "rootDir": "src",
     "baseUrl": "src"
   },
-  "include": ["src"],
+  "include": [
+    "src"
+  ],
   "exclude": [
     "**/__tests__",
     "**/__fixtures__",

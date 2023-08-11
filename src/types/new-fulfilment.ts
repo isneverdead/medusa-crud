@@ -1,6 +1,7 @@
 import { NewFulfillment } from "../models/new-fulfillment"
 
 export type UpdateNewFulfillmentInput = {
+    id: string;
     clinic_product_id?: string;
     vendor_product_id?: string;
     quantity?: number

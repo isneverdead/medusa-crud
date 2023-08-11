@@ -12,13 +12,13 @@ import {
 export function attachAdminRoutes(adminRouter: Router, options: ConfigModule
 ) {
   const router = Router();
-  const { projectConfig } = options
+  // const { projectConfig } = options
 
-  const corsOptions = {
-    origin: projectConfig.admin_cors.split(","),
-    credentials: true,
-  }
-  adminRouter.use(cors(corsOptions))
+  // const corsOptions = {
+  //   origin: projectConfig.admin_cors.split(","),
+  //   credentials: true,
+  // }
+  // adminRouter.use(cors(corsOptions))
   // Attach our router to a custom path on the admin router
   adminRouter.use("/", router);
 
@@ -37,7 +37,7 @@ export function attachAdminRoutes(adminRouter: Router, options: ConfigModule
   router.post("/create-new-fulfillment", async (req, res) => {
     try {
 
-      const request = await req.body
+      const request = req.body
 
       // console.log(req.scope.hasRegistration('loggedInUser'))
       // const loggedIn = await req.scope.resolve('loggedInUser')
